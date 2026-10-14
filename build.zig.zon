@@ -1,0 +1,27 @@
+.{
+    .name = .bazig,
+    .version = "0.1.0",
+    .fingerprint = 0x98c58ac528be8a47, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.17.0",
+    .dependencies = .{
+        // translates miniaudio.h (Zig 0.17 has no @cImport)
+        .translate_c = .{
+            .url = "git+https://codeberg.org/ziglang/translate-c#875969d3493e245e01bf5d7860f792d8f3eb9ef5",
+            .hash = "translate_c-0.0.0-Q_BUWoFOBwAhz77Zd15HCVuhTKzdUKc94kezmCeJ7IC_",
+        },
+        // miniaudio 0.11.25, compiled in (public domain or MIT-0)
+        .miniaudio = .{
+            .url = "https://github.com/mackron/miniaudio/archive/refs/tags/0.11.25.tar.gz",
+            .hash = "N-V-__8AAHNWwAASlNuYbrP1-3UqXdwbYvZ_6nIJhpAcRMfi",
+        },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "examples",
+        "README.md",
+        "LICENSE",
+        "CHANGELOG.md",
+    },
+}
